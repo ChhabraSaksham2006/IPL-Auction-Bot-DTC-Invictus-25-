@@ -17,7 +17,7 @@ from strategies.statistical import StatisticalBiddingStrategy
 def main():
     """
     Main function that orchestrates the auction process.
-    Loads player data, initializes teams, and runs the auction.
+    Loads player data, initializes teams, and runs the auction. 
     """
     # Load data for all categories of players from CSV files
     batsmen = load_players("dataset/batsmen.csv", role="batsman")
@@ -30,10 +30,10 @@ def main():
 
     # Initialize team budgets (in millions)
     team_budgets = {
-        "Team A": 25.0,
-        "Team B": 25.0,
-        "Team C": 25.0,
-        "Team D": 25.0
+        "Team A": 60.0,
+        "Team B": 60.0,
+        "Team C": 60.0,
+        "Team D": 60.0
     }
 
     # Set maximum players allowed per team
