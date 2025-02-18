@@ -64,5 +64,15 @@ def main():
     for t in teams:
         t.print_team_summary()
 
+    # Compute and display team ranking based on total star counts acquired
+    def team_star_count(team):
+        # Each player object is assumed to have a "stats" attribute (a dict) that contains a "stars" key.
+        return sum(player.stats.get("stars", 0) for player in team.players)
+
+    ranked_teams = sorted(teams, key=team_star_count, reverse=True)
+    print("\nTeam Rankings based on Star Counts:")
+    for rank, team in enumerate(ranked_teams, start=1):
+        print(f"{rank}. {team.name}: {team_star_count(team)} stars")
+
 if __name__ == "__main__":
     main()
