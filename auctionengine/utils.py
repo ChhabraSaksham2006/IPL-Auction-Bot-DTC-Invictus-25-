@@ -18,7 +18,7 @@ def load_players(filepath, role):
     Returns:
         list: List of Player objects created from the CSV data
     """
-    df = pd.read_csv(filepath)
+    df = pd.read_csv(filepath).dropna()
     players = []
 
     for _, row in df.iterrows():
